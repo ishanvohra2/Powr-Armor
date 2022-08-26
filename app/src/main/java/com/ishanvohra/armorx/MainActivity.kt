@@ -1,4 +1,4 @@
-package com.ishanvohra.myapplication
+package com.ishanvohra.armorx
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

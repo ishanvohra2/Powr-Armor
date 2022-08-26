@@ -1,4 +1,4 @@
-package com.ishanvohra.myapplication
+package com.ishanvohra.armorx
 
 import org.junit.Test
 
