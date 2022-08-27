@@ -7,6 +7,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.ishanvohra.armorx.databinding.ActivityMainBinding
 import com.ishanvohra.armorx.extensions.gone
 import com.ishanvohra.armorx.extensions.show
@@ -15,7 +16,7 @@ import com.ishanvohra.armorx.ui.adapters.ArmorPiecesAdapter
 import com.ishanvohra.armorx.viewModels.MainViewModel
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
 
     private val viewModel by lazy {
         ViewModelProvider(this)[MainViewModel::class.java]
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         collectArmorResponse()
         fetchAllArmorPieces()
         addEditTextListener()
+        binding.swipeRefreshLayout.setOnRefreshListener(this)
     }
 
     private fun addEditTextListener() {
@@ -62,6 +64,7 @@ class MainActivity : AppCompatActivity() {
     private fun collectArmorResponse() {
         lifecycleScope.launch{
             viewModel.armorUIState.collect{
+                binding.swipeRefreshLayout.isRefreshing = false
                 when(val state = it){
                     is MainViewModel.ArmorUIState.LoadingState -> { showLoadingState() }
                     is MainViewModel.ArmorUIState.ErrorState -> { showErrorState() }
@@ -99,5 +102,9 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         binding.resultsRecyclerView.layoutManager = GridLayoutManager(this, 2)
         binding.resultsRecyclerView.adapter = armorPiecesAdapter
+    }
+
+    override fun onRefresh() {
+        viewModel.getArmorPieces(refresh = true)
     }
 }

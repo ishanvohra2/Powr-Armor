@@ -19,9 +19,9 @@ class MainViewModel: ViewModel() {
         const val TAG = "MainViewModel"
     }
 
-    fun getArmorPieces() {
+    fun getArmorPieces(refresh: Boolean = false) {
         viewModelScope.launch {
-            if(armorUIState.value is ArmorUIState.SuccessState)
+            if(armorUIState.value is ArmorUIState.SuccessState && !refresh)
                 return@launch
 
             armorUIState.emit(ArmorUIState.LoadingState)
