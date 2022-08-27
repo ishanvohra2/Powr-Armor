@@ -1,4 +1,4 @@
-package com.ishanvohra.armorx.extensions
+package com.ishanvohra.powrarmor.extensions
 
 import android.content.Context
 import android.util.DisplayMetrics

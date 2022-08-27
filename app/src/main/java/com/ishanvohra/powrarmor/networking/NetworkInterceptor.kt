@@ -1,4 +1,4 @@
-package com.ishanvohra.armorx.networking
+package com.ishanvohra.powrarmor.networking
 
 import android.util.Log
 import okhttp3.Interceptor

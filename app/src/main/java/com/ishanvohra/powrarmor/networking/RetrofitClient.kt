@@ -1,6 +1,6 @@
-package com.ishanvohra.armorx.networking
+package com.ishanvohra.powrarmor.networking
 
-import com.ishanvohra.armorx.BASE_URL
+import com.ishanvohra.powrarmor.BASE_URL
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

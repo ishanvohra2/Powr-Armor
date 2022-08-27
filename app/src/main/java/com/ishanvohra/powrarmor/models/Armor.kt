@@ -1,4 +1,4 @@
-package com.ishanvohra.armorx.models
+package com.ishanvohra.powrarmor.models
 
 class ArmorResponse : ArrayList<ArmorResponseItem>()
 

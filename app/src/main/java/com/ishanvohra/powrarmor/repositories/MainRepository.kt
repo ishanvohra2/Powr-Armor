@@ -1,6 +1,6 @@
-package com.ishanvohra.armorx.repositories
+package com.ishanvohra.powrarmor.repositories
 
-import com.ishanvohra.armorx.networking.RetrofitClient
+import com.ishanvohra.powrarmor.networking.RetrofitClient
 
 class MainRepository {
 

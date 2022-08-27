@@ -1,6 +1,6 @@
-package com.ishanvohra.armorx.networking
+package com.ishanvohra.powrarmor.networking
 
-import com.ishanvohra.armorx.models.ArmorResponse
+import com.ishanvohra.powrarmor.models.ArmorResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

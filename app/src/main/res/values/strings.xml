@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ArmorX</string>
+    <string name="app_name">Powr Armor</string>
     <string name="search_hint">Search here…</string>
     <string name="decoration_slots">Decoration Slots: %1$d</string>
     <string name="base_defense">Base Defense: %1$d</string>

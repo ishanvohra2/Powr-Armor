@@ -1,11 +1,11 @@
-package com.ishanvohra.armorx.viewModels
+package com.ishanvohra.powrarmor.viewModels
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ishanvohra.armorx.models.ArmorResponse
-import com.ishanvohra.armorx.models.ArmorResponseItem
-import com.ishanvohra.armorx.repositories.MainRepository
+import com.ishanvohra.powrarmor.models.ArmorResponse
+import com.ishanvohra.powrarmor.models.ArmorResponseItem
+import com.ishanvohra.powrarmor.repositories.MainRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import java.util.*

@@ -1,4 +1,4 @@
-package com.ishanvohra.armorx.ui.activities
+package com.ishanvohra.powrarmor.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,17 +8,17 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.ishanvohra.armorx.R
-import com.ishanvohra.armorx.Utils.WindowSizeClass
-import com.ishanvohra.armorx.Utils.getNumberOfColumns
-import com.ishanvohra.armorx.Utils.getWindowSizeClass
-import com.ishanvohra.armorx.databinding.ActivityMainBinding
-import com.ishanvohra.armorx.extensions.gone
-import com.ishanvohra.armorx.extensions.pxToDp
-import com.ishanvohra.armorx.extensions.show
-import com.ishanvohra.armorx.models.ArmorResponse
-import com.ishanvohra.armorx.ui.adapters.ArmorPiecesAdapter
-import com.ishanvohra.armorx.viewModels.MainViewModel
+import com.ishanvohra.powrarmor.R
+import com.ishanvohra.powrarmor.Utils.WindowSizeClass
+import com.ishanvohra.powrarmor.Utils.getNumberOfColumns
+import com.ishanvohra.powrarmor.Utils.getWindowSizeClass
+import com.ishanvohra.powrarmor.databinding.ActivityMainBinding
+import com.ishanvohra.powrarmor.extensions.gone
+import com.ishanvohra.powrarmor.extensions.pxToDp
+import com.ishanvohra.powrarmor.extensions.show
+import com.ishanvohra.powrarmor.models.ArmorResponse
+import com.ishanvohra.powrarmor.ui.adapters.ArmorPiecesAdapter
+import com.ishanvohra.powrarmor.viewModels.MainViewModel
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {

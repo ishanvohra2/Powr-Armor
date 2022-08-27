@@ -1,4 +1,4 @@
-package com.ishanvohra.armorx
+package com.ishanvohra.powrarmor
 
 import org.junit.Test
 

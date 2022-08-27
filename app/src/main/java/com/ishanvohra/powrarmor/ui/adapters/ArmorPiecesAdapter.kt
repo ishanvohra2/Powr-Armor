@@ -1,16 +1,15 @@
-package com.ishanvohra.armorx.ui.adapters
+package com.ishanvohra.powrarmor.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.ishanvohra.armorx.R
-import com.ishanvohra.armorx.databinding.ItemSearchResultBinding
-import com.ishanvohra.armorx.models.ArmorResponseItem
+import com.ishanvohra.powrarmor.R
+import com.ishanvohra.powrarmor.databinding.ItemSearchResultBinding
+import com.ishanvohra.powrarmor.models.ArmorResponseItem
 import java.util.*
 
 class ArmorPiecesAdapter(val context: Context): RecyclerView.Adapter<ArmorPiecesAdapter.ViewHolder>() {

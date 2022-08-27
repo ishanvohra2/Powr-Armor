@@ -1,7 +1,7 @@
-package com.ishanvohra.armorx.Utils
+package com.ishanvohra.powrarmor.Utils
 
 import android.content.Context
-import com.ishanvohra.armorx.extensions.pxToDp
+import com.ishanvohra.powrarmor.extensions.pxToDp
 
 enum class WindowSizeClass { COMPACT, MEDIUM, EXPANDED }
 
