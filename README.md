@@ -3,14 +3,14 @@
 ## Introduction
 Powr Armor uses the [Monster Hunter World API](https://docs.mhw-db.com/#introduction) to fetch a list of armor pieces. And the user can search an item among the same in a very slick UI.
 
-[Download from here](https://drive.google.com/file/d/1mUBYVdnwbLnWCU8Xw5E5zkPK8bm41jQR/view?usp=sharing)
+[Download from here](https://drive.google.com/drive/folders/17-OegxbyTkPDIX9GG5R51jmlvR997g_s?usp=sharing)
 
 ## UI
 
 There are three different states of the UI as shown below:
 |Loading State                       |Error State                             |Success State                  |
 |------------------------------------|----------------------------------------|-------------------------------|
-|![image](https://user-images.githubusercontent.com/19891009/187033388-4af58be6-971b-49ff-bb95-0696a3cb3079.png) | ![image](https://user-images.githubusercontent.com/19891009/187033409-e896ace1-80a9-46a2-b4a4-c642e1462895.png) | ![image](https://user-images.githubusercontent.com/19891009/187033441-0e94979b-4379-40b4-acd1-6e534bf10f65.png) |
+|![image](https://user-images.githubusercontent.com/19891009/187033388-4af58be6-971b-49ff-bb95-0696a3cb3079.png) | ![image](https://user-images.githubusercontent.com/19891009/187033409-e896ace1-80a9-46a2-b4a4-c642e1462895.png) | ![image](https://user-images.githubusercontent.com/19891009/187034370-ee606377-aff6-4b5e-bb38-847a464fbaa5.png) |
 
 ## Features
 The app presents quite a good amount of features.
@@ -20,7 +20,7 @@ is responsive to any orientation.
 
 |Portrait                       |Landscape                             |
 |-------------------------------|--------------------------------------|
-|![image](https://user-images.githubusercontent.com/19891009/187033477-588bfffd-1b67-44e0-8872-12d02ecc3c4a.png) |![image](https://user-images.githubusercontent.com/19891009/187033494-425e7f32-8f39-4199-b304-dc75ed23a6ac.png) |
+|![image](https://user-images.githubusercontent.com/19891009/187034390-f3d328aa-2e28-41de-ac8a-9ede664b4059.png) |![image](https://user-images.githubusercontent.com/19891009/187034412-d8c3cae8-b43d-48e2-902d-fc29b0c2f44e.png) |
 - Network efficient. The app does not call the API each time the device is rotated
 or resumed from the background state. The data is persistent across the lifetime of the 
 app.
