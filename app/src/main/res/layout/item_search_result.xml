@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             tools:src="@drawable/ic_head"
             android:layout_margin="5dp"
+            android:contentDescription="@null"
             app:layout_constraintBottom_toBottomOf="@id/armorPartImage"
             app:layout_constraintEnd_toEndOf="@id/armorPartImage"/>
 

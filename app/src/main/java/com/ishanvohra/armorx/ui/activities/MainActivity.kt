@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.armorUIState.collect{
                 when(val state = it){
                     is MainViewModel.ArmorUIState.LoadingState -> { showLoadingState() }
-                    is MainViewModel.ArmorUIState.ErrorState -> {}
+                    is MainViewModel.ArmorUIState.ErrorState -> { showErrorState() }
                     is MainViewModel.ArmorUIState.SuccessState -> {
                         showSuccessState(state.response)
                     }
@@ -73,13 +73,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun showErrorState() {
+        binding.shimmerLayout.root.gone()
+        binding.resultsRecyclerView.gone()
+        binding.errorLayout.root.show()
+    }
+
     private fun showLoadingState() {
         binding.shimmerLayout.root.show()
         binding.resultsRecyclerView.gone()
+        binding.errorLayout.root.gone()
     }
 
     private fun showSuccessState(response: ArmorResponse) {
         binding.shimmerLayout.root.gone()
+        binding.errorLayout.root.gone()
         binding.resultsRecyclerView.show()
         armorPiecesAdapter.dataSet = response
     }

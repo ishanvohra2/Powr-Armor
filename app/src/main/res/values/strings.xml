@@ -4,4 +4,5 @@
     <string name="decoration_slots">Decoration Slots: %1$d</string>
     <string name="base_defense">Base Defense: %1$d</string>
     <string name="rank">Rank: %1$s</string>
+    <string name="network_error_message">Something went wrong. Please try again!</string>
 </resources>

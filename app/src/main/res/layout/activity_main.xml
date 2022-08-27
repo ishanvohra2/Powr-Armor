@@ -47,7 +47,13 @@
 
         <include
             layout="@layout/layout_shimmer_search_result"
-            android:id="@+id/shimmerLayout"/>
+            android:id="@+id/shimmerLayout"
+            android:visibility="gone"/>
+
+        <include
+            layout="@layout/layout_network_error"
+            android:id="@+id/errorLayout"
+            android:visibility="gone"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/resultsRecyclerView"
