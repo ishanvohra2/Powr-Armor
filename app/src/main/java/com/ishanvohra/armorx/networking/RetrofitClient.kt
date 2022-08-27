@@ -13,6 +13,7 @@ class RetrofitClient {
 
         //defining http client properties
         val okHttpClient: OkHttpClient = OkHttpClient.Builder()
+            .addInterceptor(NetworkInterceptor())
             .connectTimeout(1, TimeUnit.MINUTES)
             .readTimeout(100, TimeUnit.SECONDS)
             .writeTimeout(100, TimeUnit.SECONDS)
