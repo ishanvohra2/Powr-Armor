@@ -1,6 +1,7 @@
 package com.ishanvohra.armorx.ui.activities
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             it?.let {
                 if(viewModel.armorUIState.value is  MainViewModel.ArmorUIState.SuccessState){
                     if (it.toString().length > 3) {
-                        armorPiecesAdapter.filterList(it.toString())
+                        filterList(it.toString())
                     } else {
                         armorPiecesAdapter.dataSet =
                             (viewModel.armorUIState.value as MainViewModel.ArmorUIState.SuccessState).response
@@ -48,6 +49,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun filterList(query: String) {
+        viewModel.filterList(query)
+        armorPiecesAdapter.dataSet = viewModel.filteredList.value
     }
 
     private fun collectArmorResponse() {

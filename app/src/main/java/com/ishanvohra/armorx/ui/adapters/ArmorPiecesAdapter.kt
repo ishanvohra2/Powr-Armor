@@ -68,15 +68,4 @@ class ArmorPiecesAdapter(val context: Context): RecyclerView.Adapter<ArmorPieces
         return dataSet.size
     }
 
-    fun filterList(query: String) {
-        val filteredList = mutableListOf<ArmorResponseItem>()
-        val filterPattern = query.lowercase(Locale.ROOT).trim()
-        for (item in dataSet) {
-            if (item.name.lowercase(Locale.ROOT).contains(filterPattern)) {
-                filteredList.add(item)
-            }
-        }
-        dataSet = filteredList
-    }
-
 }
