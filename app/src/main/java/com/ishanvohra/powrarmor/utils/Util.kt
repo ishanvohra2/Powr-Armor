@@ -1,4 +1,4 @@
-package com.ishanvohra.powrarmor.Utils
+package com.ishanvohra.powrarmor.utils
 
 import android.content.Context
 import com.ishanvohra.powrarmor.extensions.pxToDp
@@ -10,8 +10,6 @@ enum class WindowSizeClass { COMPACT, MEDIUM, EXPANDED }
  * If the width is greater than 840dp, the function returns EXPANDED
  * If the width is greater than 600dp and less than 840dp, the function returns MEDIUM
  * if the width is less than 600 dp, the function returns COMPACT
- *
- * The way we get the width, needs to be changed. Need to use WindowMetricsCalculator interface
  */
 fun getWindowSizeClass(context: Context): WindowSizeClass {
     val width = context.resources.displayMetrics.widthPixels.pxToDp(context)

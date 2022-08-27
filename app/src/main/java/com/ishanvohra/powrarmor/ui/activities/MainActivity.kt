@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.ishanvohra.powrarmor.R
-import com.ishanvohra.powrarmor.Utils.WindowSizeClass
-import com.ishanvohra.powrarmor.Utils.getNumberOfColumns
-import com.ishanvohra.powrarmor.Utils.getWindowSizeClass
+import com.ishanvohra.powrarmor.utils.WindowSizeClass
+import com.ishanvohra.powrarmor.utils.getNumberOfColumns
+import com.ishanvohra.powrarmor.utils.getWindowSizeClass
 import com.ishanvohra.powrarmor.databinding.ActivityMainBinding
 import com.ishanvohra.powrarmor.extensions.gone
 import com.ishanvohra.powrarmor.extensions.pxToDp
@@ -66,6 +66,9 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         armorPiecesAdapter.dataSet = viewModel.filteredList.value
     }
 
+    /**
+     * Observe UI State returned by view model
+     */
     private fun collectArmorResponse() {
         lifecycleScope.launch{
             viewModel.armorUIState.collect{
@@ -109,6 +112,11 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         binding.resultsRecyclerView.adapter = armorPiecesAdapter
     }
 
+    /**
+     * Define layout manager for resultsRecyclerView
+     * If the device is compact, then only two columns will be displayed
+     * If device width is greater, then column number would be vary based on screen width
+     */
     private fun getLayoutManager(): RecyclerView.LayoutManager {
         return when (getWindowSizeClass(this)) {
             WindowSizeClass.COMPACT -> {
@@ -127,6 +135,9 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         }
     }
 
+    /**
+     * Fetch armor pieces again when pulled to refresh
+     */
     override fun onRefresh() {
         viewModel.getArmorPieces(refresh = true)
     }

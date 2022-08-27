@@ -7,6 +7,9 @@ import okhttp3.Request
 import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 
+/**
+ * Custom interceptor class for the retrofit client
+ */
 class NetworkInterceptor: Interceptor {
 
     companion object{
@@ -16,6 +19,9 @@ class NetworkInterceptor: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder: Request.Builder = chain.request().newBuilder()
 
+        /**
+         * Catch exceptions thrown while sending the request
+         */
         return try {
             chain.proceed(builder.build())
         } catch (e: Exception) {

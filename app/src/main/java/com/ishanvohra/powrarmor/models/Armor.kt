@@ -2,6 +2,9 @@ package com.ishanvohra.powrarmor.models
 
 class ArmorResponse : ArrayList<ArmorResponseItem>()
 
+/**
+ * Response model for getArmor() API
+ */
 data class ArmorResponseItem(
     val assets: Assets?,
     val defense: Defense,

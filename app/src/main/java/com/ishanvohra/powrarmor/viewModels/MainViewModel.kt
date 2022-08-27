@@ -40,6 +40,10 @@ class MainViewModel: ViewModel() {
         }
     }
 
+    /**
+     * Return the list of armor pieces whose name contains the param string
+     * @param query
+     */
     fun filterList(query: String) {
         val state = armorUIState.value as ArmorUIState.SuccessState
         val list = mutableListOf<ArmorResponseItem>()
@@ -52,6 +56,9 @@ class MainViewModel: ViewModel() {
         filteredList.value = list
     }
 
+    /**
+     * Sealed class containing all the UI states
+     */
     sealed class ArmorUIState{
         class SuccessState(val response: ArmorResponse): ArmorUIState()
         object LoadingState: ArmorUIState()

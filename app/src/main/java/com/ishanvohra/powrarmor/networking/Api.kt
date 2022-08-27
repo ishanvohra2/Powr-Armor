@@ -6,6 +6,9 @@ import retrofit2.http.GET
 
 interface Api {
 
+    /**
+     * GET call to fetch all the armor pieces
+     */
     @GET("armor")
     suspend fun getArmorPieces(): Response<ArmorResponse>
 
