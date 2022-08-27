@@ -1,12 +1,11 @@
 package com.ishanvohra.armorx.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import com.ishanvohra.armorx.R
 import com.ishanvohra.armorx.databinding.ActivityMainBinding
 import com.ishanvohra.armorx.ui.adapters.ArmorPiecesAdapter
 import com.ishanvohra.armorx.viewModels.MainViewModel
@@ -39,11 +38,13 @@ class MainActivity : AppCompatActivity() {
     private fun addEditTextListener() {
         binding.searchEditText.addTextChangedListener {
             it?.let {
-                if(it.toString().length > 3){
-                    armorPiecesAdapter.filterList(it.toString())
-                }
-                else {
-                    armorPiecesAdapter.dataSet = (viewModel.armorUIState.value as MainViewModel.ArmorUIState.SuccessState).response
+                if(viewModel.armorUIState.value is  MainViewModel.ArmorUIState.SuccessState){
+                    if (it.toString().length > 3) {
+                        armorPiecesAdapter.filterList(it.toString())
+                    } else {
+                        armorPiecesAdapter.dataSet =
+                            (viewModel.armorUIState.value as MainViewModel.ArmorUIState.SuccessState).response
+                    }
                 }
             }
         }
