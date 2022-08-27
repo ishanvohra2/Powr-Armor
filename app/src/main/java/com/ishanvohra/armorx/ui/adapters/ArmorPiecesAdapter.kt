@@ -32,9 +32,11 @@ class ArmorPiecesAdapter(val context: Context): RecyclerView.Adapter<ArmorPieces
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.binding){
             with(dataSet[position]){
-                Glide.with(context)
-                    .load(assets.imageFemale)
-                    .into(armorPartImage)
+                assets?.let {
+                    Glide.with(context)
+                        .load(it.imageFemale)
+                        .into(armorPartImage)
+                }
 
                 typeImageView.setImageDrawable(getImageDrawbleId(this.type)?.let {
                     ContextCompat.getDrawable(context,
