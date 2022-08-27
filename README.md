@@ -16,8 +16,9 @@ The app presents quite a good amount of features.
 - A smooth user experience and a simplistic user interface. 
 - The app also supports a variety of devices with respect to size and 
 is responsive to any orientation.
+
 |Portrait                       |Landscape                             |
-|------------------------------------|----------------------------------------|
+|-------------------------------|--------------------------------------|
 |![image](https://user-images.githubusercontent.com/19891009/187033477-588bfffd-1b67-44e0-8872-12d02ecc3c4a.png) |![image](https://user-images.githubusercontent.com/19891009/187033494-425e7f32-8f39-4199-b304-dc75ed23a6ac.png) |
 - Network efficient. The app does not call the API each time the device is rotated
 or resumed from the background state. The data is persistent across the lifetime of the 
