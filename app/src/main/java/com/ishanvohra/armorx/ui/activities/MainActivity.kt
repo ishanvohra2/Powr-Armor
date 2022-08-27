@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ishanvohra.armorx.databinding.ActivityMainBinding
+import com.ishanvohra.armorx.extensions.gone
+import com.ishanvohra.armorx.extensions.show
+import com.ishanvohra.armorx.models.ArmorResponse
 import com.ishanvohra.armorx.ui.adapters.ArmorPiecesAdapter
 import com.ishanvohra.armorx.viewModels.MainViewModel
 import kotlinx.coroutines.launch
@@ -60,14 +63,25 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch{
             viewModel.armorUIState.collect{
                 when(val state = it){
-                    is MainViewModel.ArmorUIState.LoadingState -> {}
+                    is MainViewModel.ArmorUIState.LoadingState -> { showLoadingState() }
                     is MainViewModel.ArmorUIState.ErrorState -> {}
                     is MainViewModel.ArmorUIState.SuccessState -> {
-                        armorPiecesAdapter.dataSet = state.response
+                        showSuccessState(state.response)
                     }
                 }
             }
         }
+    }
+
+    private fun showLoadingState() {
+        binding.shimmerLayout.root.show()
+        binding.resultsRecyclerView.gone()
+    }
+
+    private fun showSuccessState(response: ArmorResponse) {
+        binding.shimmerLayout.root.gone()
+        binding.resultsRecyclerView.show()
+        armorPiecesAdapter.dataSet = response
     }
 
     private fun fetchAllArmorPieces() {
