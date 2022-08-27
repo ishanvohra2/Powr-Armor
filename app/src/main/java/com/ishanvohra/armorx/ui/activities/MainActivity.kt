@@ -1,15 +1,20 @@
 package com.ishanvohra.armorx.ui.activities
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.ishanvohra.armorx.R
+import com.ishanvohra.armorx.Utils.WindowSizeClass
+import com.ishanvohra.armorx.Utils.getNumberOfColumns
+import com.ishanvohra.armorx.Utils.getWindowSizeClass
 import com.ishanvohra.armorx.databinding.ActivityMainBinding
 import com.ishanvohra.armorx.extensions.gone
+import com.ishanvohra.armorx.extensions.pxToDp
 import com.ishanvohra.armorx.extensions.show
 import com.ishanvohra.armorx.models.ArmorResponse
 import com.ishanvohra.armorx.ui.adapters.ArmorPiecesAdapter
@@ -100,8 +105,26 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     private fun initRecyclerView() {
-        binding.resultsRecyclerView.layoutManager = GridLayoutManager(this, 2)
+        binding.resultsRecyclerView.layoutManager = getLayoutManager()
         binding.resultsRecyclerView.adapter = armorPiecesAdapter
+    }
+
+    private fun getLayoutManager(): RecyclerView.LayoutManager {
+        return when (getWindowSizeClass(this)) {
+            WindowSizeClass.COMPACT -> {
+                GridLayoutManager(this, 2)
+            }
+            WindowSizeClass.MEDIUM, WindowSizeClass.EXPANDED -> {
+                GridLayoutManager(
+                    this,
+                    getNumberOfColumns(
+                        resources.getDimension(R.dimen.card_max_width).toInt().pxToDp(this),
+                        resources.getDimension(R.dimen.card_spacing).toInt().pxToDp(this),
+                        this
+                    )
+                )
+            }
+        }
     }
 
     override fun onRefresh() {
