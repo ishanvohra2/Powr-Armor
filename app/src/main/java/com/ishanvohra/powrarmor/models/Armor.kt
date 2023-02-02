@@ -1,7 +1,5 @@
 package com.ishanvohra.powrarmor.models
 
-class ArmorResponse : ArrayList<ArmorResponseItem>()
-
 /**
  * Response model for getArmor() API
  */
@@ -10,9 +8,7 @@ data class ArmorResponseItem(
     val defense: Defense,
     val id: Int,
     val name: String,
-    val rank: String,
-    val slots: List<Slot>,
-    val type: String
+    val slots: List<Slot>
 )
 
 data class Assets(
@@ -21,9 +17,7 @@ data class Assets(
 )
 
 data class Defense(
-    val augmented: Int,
-    val base: Int,
-    val max: Int
+    val base: Int
 )
 
 data class Slot(
