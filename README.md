@@ -1,9 +1,7 @@
 # Powr Armor
 
 ## Introduction
-Powr Armor uses the [Monster Hunter World API](https://docs.mhw-db.com/#introduction) to fetch a list of armor pieces. And the user can search an item among the same in a very slick UI.
-
-[Download from here](https://drive.google.com/drive/folders/17-OegxbyTkPDIX9GG5R51jmlvR997g_s?usp=sharing)
+Powr Armor uses the [Monster Hunter World API](https://docs.mhw-db.com/#introduction) to fetch a list of armor pieces. And the user can search an item among the same in a very slick UI built using Jetpack Compose
 
 ## UI
 
